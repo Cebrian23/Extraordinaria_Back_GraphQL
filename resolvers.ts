@@ -65,13 +65,13 @@ export const resolvers = {
             console.log(arg);
             const characters: CharacterAPI[] = [];
 
-            const data = await Axios.get<CharacterAPI[]>(`https://hp-api.onrender.com/api/character`);
+            const data = await Axios.get<CharacterAPI[]>(`https://hp-api.onrender.com/api/characters`);
             const data_char = data.data;
-            
+
             if(arg){
                 data_char.forEach((char) => {
-                    arg.forEach((arg_data) => {
-                        if(arg_data === char.id){
+                    arg.forEach((dato) => {
+                        if(dato === char.id){
                             characters.push(char);
                         }
                     });
