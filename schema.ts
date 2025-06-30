@@ -1,20 +1,20 @@
 export const schemaQL = `#graphql
     type Character {
-      id: string!,
-      name: string!,
-      alternate_names: [string!]!,
-      species: string!,
-      gender: string!,
+      id: String!,
+      name: String!,
+      alternate_names: [String!]!,
+      species: String!,
+      gender: String!,
       house: House
     },
     
     type House {
-      name: string!,
+      name: String!,
       characters: [Character!]!,
     },
 
     type Query {
-      getCharacter(id: string!): Character,
-      getCharacters(ids: [string]): [Character!]!
+      getCharacter(id: String!): Character,
+      getCharacters(ids: [String]): [Character!]!
     }
 `;
