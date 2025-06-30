@@ -62,20 +62,22 @@ export const resolvers = {
             __: unknown,
         ): Promise<CharacterAPI[]> => {
             const arg = args.ids;
+            console.log(arg);
             const characters: CharacterAPI[] = [];
 
+            const data = await Axios.get<CharacterAPI[]>(`https://hp-api.onrender.com/api/character`);
+            const data_char = data.data;
+            
             if(arg){
-                arg.forEach(async (char) => {
-                    const data = await Axios.get<CharacterAPI[]>(`https://hp-api.onrender.com/api/character/${char}`);
-                    const data_char = data.data[0];
-
-                    characters.push(data_char);
+                data_char.forEach((char) => {
+                    arg.forEach((arg_data) => {
+                        if(arg_data === char.id){
+                            characters.push(char);
+                        }
+                    });
                 });
             }
             else{
-                const data = await Axios.get<CharacterAPI[]>(`https://hp-api.onrender.com/api/characters`);
-                const data_char = data.data;
-
                 data_char.forEach((char) => {
                     characters.push(char);
                 });   
