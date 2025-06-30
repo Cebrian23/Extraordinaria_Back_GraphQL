@@ -2,7 +2,7 @@ export const schemaQL = `#graphql
     type Character {
       id: String!,
       name: String!,
-      alternate_names: [String!]!,
+      alternate_names: [String]!,
       species: String!,
       gender: String!,
       house: House
@@ -10,7 +10,7 @@ export const schemaQL = `#graphql
     
     type House {
       name: String!,
-      characters: [Character!]!,
+      characters: [Character]!,
     },
 
     type Query {
