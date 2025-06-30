@@ -1,20 +1,20 @@
 //https://hp-api.onrender.com/
 export type CharacterAPI = {
-    id: string;
-    name: string;
-    alternate_names: string[];
-    species: string;
-    gender: string;
-    house: string;
+    id: string,
+    name: string,
+    alternate_names: string[],
+    species: string,
+    gender: string,
+    house: string,
 }
 
 export type Character = {
-    id: string;
-    name: string;
-    alternate_names: string[];
-    species: string;
-    gender: string;
-    house: House | null;
+    id: string,
+    name: string,
+    alternate_names: string[],
+    species: string,
+    gender: string,
+    house: House | null,
 };
 
 export type HouseAPI = {
@@ -22,6 +22,6 @@ export type HouseAPI = {
 }
 
 export type House = {
-    name: string;
-    characters: Character[];
+    name: string,
+    characters: Character[],
 };

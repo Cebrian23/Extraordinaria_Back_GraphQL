@@ -3,9 +3,9 @@ export const schemaQL = `#graphql
       id: string!,
       name: string!,
       alternate_names: [string!]!,
-      species: string,
-      gender: string;
-      house: House | null;
+      species: string!,
+      gender: string!,
+      house: House
     },
     
     type House {
@@ -14,7 +14,7 @@ export const schemaQL = `#graphql
     },
 
     type Query {
-        getCharacter(id: string!): Character,
-        getCharacters(ids: [string]): [Character!]!
+      getCharacter(id: string!): Character,
+      getCharacters(ids: [string]): [Character!]!
     }
 `;
